@@ -109,6 +109,17 @@ class tmp_mount(object):
         ])
 
 
+def unmount(path):
+    """
+    Removes mounts at the given path
+    """
+    process.run([
+        'umount',
+        '-v',
+        path,
+    ])
+
+
 def path_is_mounted(path, destination=None):
     """
     Check if the given path is mounted
